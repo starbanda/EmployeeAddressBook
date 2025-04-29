@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Step 3</title></head>
+<body>
+<h2>Step 3: Address Info</h2>
+<p>First Name: <span th:text="${userData.firstName}"></span></p>
+<p>Last Name: <span th:text="${userData.lastName}"></span></p>
+<p>Email: <span th:text="${userData.email}"></span></p>
+<p>Phone: <span th:text="${userData.phone}"></span></p>
+
+<form th:action="@{/step3}" th:object="${userData}" method="post">
+  City: <input type="text" th:field="*{city}" /><br><br>
+  Country: <input type="text" th:field="*{country}" /><br><br>
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Step 2</title></head>
+<body>
+<h2>Step 2: Contact Info</h2>
+<p>First Name: <span th:text="${userData.firstName}"></span></p>
+<p>Last Name: <span th:text="${userData.lastName}"></span></p>
+
+<form th:action="@{/step2}" th:object="${userData}" method="post">
+  Email: <input type="email" th:field="*{email}" /><br><br>
+  Phone: <input type="text" th:field="*{phone}" /><br><br>
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>
